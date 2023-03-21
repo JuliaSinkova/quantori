@@ -1,0 +1,77 @@
+:root {
+  --logo-width: 250px;
+  --logo-height: 150px;
+}
+
+body {
+  background-color: rgb(5, 0, 53);
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+.dvd {
+  width: var(--logo-width);
+  height: var(--logo-height);
+  position: absolute;
+  object-fit: fill;
+  animation: move 37.5s linear 0s infinite alternate,
+    recolor 37.5s steps(10) infinite;
+}
+.dvd img {
+  width: 100%;
+  height: 100%;
+  filter: invert(100%) sepia(100%) saturate(10000%);
+}
+@keyframes recolor {
+  to {
+    filter: hue-rotate(120deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    left: 0;
+    top: 0;
+  }
+
+  10% {
+    left: 30vw;
+    top: calc(100vh - var(--logo-height) - 5px);
+  }
+  20% {
+    left: 50vw;
+    top: 0;
+  }
+  30% {
+    left: calc(100vw - var(--logo-width) - 5px);
+    top: 70vh;
+  }
+  40% {
+    left: 10vw;
+    top: 0;
+  }
+  50% {
+    left: 60vw;
+    top: calc(100vh - var(--logo-height) - 5px);
+  }
+  60% {
+    left: 0;
+    top: 10vh;
+  }
+  70% {
+    left: 40vw;
+    top: calc(100vh - var(--logo-height) - 5px);
+  }
+  80% {
+    left: 30vw;
+    top: 0;
+  }
+  90% {
+    left: calc(100vw - var(--logo-width));
+    top: calc(100vh - var(--logo-height) - 5px);
+  }
+  100% {
+    left: 50vw;
+    top: 0;
+  }
+}
