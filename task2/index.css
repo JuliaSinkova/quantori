@@ -1,0 +1,36 @@
+body {
+  background: white;
+  text-align: center;
+  font-family: "Comfortaa", cursive;
+}
+svg {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
+svg .hr {
+  transform-box: fill-box;
+  transform-origin: top;
+  animation: hour 25s linear 0s infinite;
+}
+svg .min {
+  transform-box: fill-box;
+  transform-origin: left;
+  animation: min 7s linear 0s infinite;
+}
+@keyframes hour {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes min {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
