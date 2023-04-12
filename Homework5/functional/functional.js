@@ -49,6 +49,8 @@
     ],
   };
 
+  let timeout = null;
+
   function useState() {
     state = JSON.parse(localStorage.getItem("state")) || state;
 
@@ -62,53 +64,57 @@
   }
 
   function displayDate(date) {
-    const dueDate = new Date(date);
-    const now = new Date();
-    const dayNow = now.getDate();
-    const dayDue = dueDate.getDate();
-    const monthNow = now.getMonth();
-    const monthDue = dueDate.getMonth();
-    const weekDayDue = dueDate.getDay();
-    const months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    const weekdays = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ];
-    let result = "";
-    dayNow === dayDue && monthNow === monthDue
-      ? (result = "Today")
-      : dayNow + 1 === dayDue && monthNow === monthDue
-      ? (result = "Tomorrow")
-      : (result = `${weekdays[weekDayDue]}, ${dayDue} ${months[monthDue]}`);
-    return result;
+    if (typeof date !== "string") {
+      throw new TypeError("Display date argument must be string type");
+    }
+
+    const fullDate = new Date(date);
+    const shortDateString = fullDate.toDateString();
+    const fullDateStringWithYear = fullDate.toLocaleDateString("en-us", {
+      weekday: "long",
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+    const fullDateString = fullDate.toLocaleDateString("en-us", {
+      weekday: "long",
+      month: "short",
+      day: "numeric",
+    });
+
+    const nowFullDate = new Date();
+    const nowShortDateString = nowFullDate.toDateString();
+
+    const tommorowFullDate = new Date();
+    tommorowFullDate.setDate(tommorowFullDate.getDate() + 1);
+    const tommorowShortDateString = tommorowFullDate.toDateString();
+
+    const isToday = shortDateString === nowShortDateString;
+    const isTommorow = shortDateString === tommorowShortDateString;
+    const isCurrentYear = fullDate.getYear() === nowFullDate.getYear();
+
+    if (isToday) {
+      return "Today";
+    }
+
+    if (isTommorow) {
+      return "Tommorow";
+    }
+
+    if (isCurrentYear) {
+      return fullDateString;
+    }
+
+    return fullDateStringWithYear;
   }
 
   function deleteItem(e) {
     const [state, setItems] = useState();
     const { itemsAll } = state;
-    const id = +e.target.parentNode.id;
-    const newItems = itemsAll.filter((item) => {
-      if (item.taskid !== id) return item;
-    });
+    const id = parseInt(e.target.parentNode.id);
+    const newItems = itemsAll.filter((item) =>
+      item.taskid !== id ? true : false
+    );
 
     setItems({ itemsAll: newItems, itemsRender: newItems, searchValue: "" });
   }
@@ -123,7 +129,6 @@
       const data = Object.fromEntries(formData);
       data.isActive = true;
       data.taskid = Date.now();
-      console.log(data);
       setItems({
         itemsRender: [...itemsRender, data],
         itemsAll: [...itemsAll, data],
@@ -135,10 +140,10 @@
   function finishItem(e) {
     const [state, setItems] = useState();
     const { itemsAll } = state;
-    const id = +e.target.parentNode.id;
+    const id = parseInt(e.target.parentNode.id);
     const newItems = itemsAll.map((item) => {
       if (item.taskid === id) {
-        item.isActive ? (item.isActive = false) : (item.isActive = true);
+        item.isActive = !item.isActive;
       }
       return item;
     });
@@ -146,8 +151,7 @@
   }
 
   function searchItems(e) {
-    let timeout = null;
-    if (timeout !== null) {
+    if (timeout != null) {
       clearTimeout(timeout);
     }
     timeout = setTimeout(function () {
@@ -213,6 +217,7 @@
     div.append(input, button);
     return div;
   }
+
   function Input(placeholder) {
     const input = document.createElement("input");
     input.placeholder = placeholder;
@@ -242,8 +247,9 @@
     info.classList.add("task__info");
     date.classList.add("task__date");
     details.classList.add("task__details");
+    taskTag.style.cursor = "default";
 
-    // chnges for completed tasks:
+    // Changes for completed tasks:
     if (!isActive) {
       taskTag.classList.add("tag--disabled");
       h3.classList.add("text--disabled");
@@ -257,6 +263,7 @@
     task.append(bin);
     return task;
   }
+
   function TasksSection({ title, items, type }) {
     const div = document.createElement("div");
     const h2 = document.createElement("h2");
@@ -304,6 +311,7 @@
     button.onclick = onClick;
     return button;
   }
+
   function Tag(type) {
     const tag = document.createElement("label");
     tag.setAttribute("for", type);
@@ -312,6 +320,7 @@
 
     return tag;
   }
+
   function DatePicker() {
     const input = document.createElement("input");
     input.type = "date";
@@ -349,6 +358,7 @@
     other.name = "tagtype";
     other.checked = true;
     other.value = "other";
+
     fieldset.append(
       home,
       tag_home,

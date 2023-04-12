@@ -33,6 +33,8 @@ h3 {
   font-size: 18px;
   line-height: 25px;
   margin: 10px 0;
+  text-overflow: clip;
+  overflow-wrap: break-word;
 }
 .text--disabled {
   color: #838383;
