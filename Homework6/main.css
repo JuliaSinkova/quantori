@@ -43,6 +43,10 @@ h3 {
   width: 60vw;
   margin-top: 45px;
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+}
 .btn {
   border-radius: 12px;
   border: none;
@@ -211,7 +215,7 @@ h3 {
 #other:checked ~ .tag--other {
   border: 2px solid #ea8c00;
 }
-.tag--disabled {
+.tag--disabled label{
   background: #f5f5f5;
   color: #838383;
   border: 2px solid #f5f5f5;
@@ -331,4 +335,43 @@ input[type="radio"] {
 
 .task__bin:hover {
   background: url("assets/bin_hover.svg");
+}
+.weather {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.weather img {
+  width: 50px;
+  height: 50px;
+}
+.weather__temp {
+  margin-left: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 36px;
+}
+.weather__city {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 36px;
+  color: #838383;
+  margin-left: 10vw;
+}
+.weather__tooltip {
+  height: 70px;
+  position: absolute;
+  top: 20px;
+  font-size: 18px;
+  line-height: 36px;
+  color: #838383;
+  visibility: hidden;
+  z-index: 100;
+}
+.weather::hover .weather__tooltip {
+  position: absolute;
+  visibility: visible;
 }
