@@ -1,0 +1,8 @@
+.task-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .task-section ul {
+    padding: 0;
+  }

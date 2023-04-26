@@ -1,0 +1,30 @@
+.date-picker {
+    position: relative;
+    box-sizing: border-box;
+    width: 117px;
+    height: 40px;
+    background: #ffffff;
+    padding: 10px 0 10px 10px;
+    border: 2px solid rgba(60, 134, 244, 0.6);
+    border-radius: 12px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .date-picker::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+  }
+  .date-picker::-webkit-inner-spin-button,
+  .date-picker::-webkit-clear-button {
+    z-index: 1;
+  }

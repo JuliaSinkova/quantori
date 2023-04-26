@@ -1,0 +1,40 @@
+.weather {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .weather__icon {
+  
+    width: 50px;
+    height: 50px;
+  }
+  .weather__temp {
+    margin-left: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 36px;
+  }
+  .weather__city {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 36px;
+    color: #838383;
+    margin-left: 10vw;
+  }
+  .weather__tooltip {
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    font-size: 18px;
+    line-height: 36px;
+    color: #838383;
+    visibility: hidden;
+    z-index: 100;
+  }
+  .weather::hover .weather__tooltip {
+    position: absolute;
+    visibility: visible;
+  }
