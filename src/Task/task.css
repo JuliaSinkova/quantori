@@ -1,0 +1,71 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 60%;
+}
+.task__info {
+  width: 80%;
+}
+
+.task__details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.task__date {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #838383;
+}
+.task label {
+  cursor: default;
+}
+
+.task__bin {
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: url("../assets/bin.svg");
+  cursor: pointer;
+}
+
+.checkbox {
+  appearance: none;
+  border: 2px solid #d3d3d3;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  transition: 0.2s all linear;
+  cursor: pointer;
+}
+.checkbox:checked {
+  background-color: #d3d3d3;
+  position: relative;
+}
+.checkbox:checked::after {
+  content: url("../assets/inline/tick.svg");
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+.checkbox:active {
+  background-color: #3c86f4;
+  position: relative;
+  border: 2px solid #3c86f4;
+}
+.checkbox:active::after {
+  content: url("../assets/inline/tick.svg");
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+.checkbox:checked::after {
+  content: url("../assets/inline/tick.svg");
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
