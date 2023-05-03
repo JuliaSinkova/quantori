@@ -1,0 +1,9 @@
+.tags {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }

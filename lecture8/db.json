@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "title": "My First Task",
+      "tagtype": "other",
+      "time": "2023-05-03",
+      "isActive": true,
+      "id": 1683119497123
+    },
+    {
+      "title": "My Second Task",
+      "tagtype": "other",
+      "time": "2023-05-03",
+      "isActive": true,
+      "id": 1683119504871
+    },
+    {
+      "title": "My Completed Task",
+      "tagtype": "home",
+      "time": "2023-05-03",
+      "isActive": false,
+      "id": 1683119517920
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+.btn {
+    border-radius: 12px;
+    border: none;
+    width: 158.15px;
+    height: 52px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  .btn--new {
+    background: #e2edfe;
+    color: #0053cf;
+  }
+  .btn--new:hover {
+    background: #bbd5fb;
+    color: #0053cf;
+  }
+  
+  .btn--modal-add {
+    background: #3c86f4;
+    color: #fff;
+    flex-grow: 1;
+  }
+  .btn--modal-cancel {
+    background: #fff;
+    color: #3c86f4;
+    flex-grow: 1;
+  }
+  .btn--modal-disabled {
+    background: #d3d3d3;
+    color: #fff;
+    flex-grow: 1;
+    cursor: not-allowed;
+  }
