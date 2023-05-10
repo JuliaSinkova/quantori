@@ -1,0 +1,78 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    min-width: 350px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin-top: 40px;
+
+    
+  }
+  .tag {
+    box-sizing: border-box;
+    cursor: pointer;
+    content: "hhhh";
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    width: fit-content;
+    height: 19px;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: none;
+  }
+  .tag--home {
+    background: #e2f6e2;
+    color: #639462;
+    border: 2px solid #e2f6e2;
+  }
+ .tag--home-active {
+    border: 2px solid #639462;
+  }
+  .tag--health {
+    background: #bdd3f4;
+    color: #0053cf;
+    border: 2px solid #bdd3f4;
+  }
+  .tag--health-active {
+    border: 2px solid #0053cf;
+  }
+  .tag--work {
+    background: #e8d7ff;
+    color: #9747ff;
+    border: 2px solid #e8d7ff;
+  }
+  .tag--work-active {
+    border: 2px solid #9747ff;
+  }
+  .tag--other {
+    background: #ffecc7;
+    color: #ea8c00;
+    border: 2px solid #ffecc7;
+  }
+  
+   .tag--other-active {
+    border: 2px solid #ea8c00;
+  }
+  .tag--all {
+    background: #ffc7dd;
+    color: #db4c8a;
+    border: 2px solid #ffc7dd;
+  }
+  
+  .tag--all-active {
+    border: 2px solid #db4c8a;
+  }
+  
+ 
+  
