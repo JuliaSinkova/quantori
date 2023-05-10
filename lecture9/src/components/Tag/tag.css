@@ -1,0 +1,61 @@
+.tag {
+  box-sizing: border-box;
+  cursor: pointer;
+  content: "hhhh";
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  width: fit-content;
+  height: 19px;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+.tag--home {
+  background: #e2f6e2;
+  color: #639462;
+  border: 2px solid #e2f6e2;
+}
+.tags #home:checked ~ .tag--home {
+  border: 2px solid #639462;
+}
+.tag--health {
+  background: #bdd3f4;
+  color: #0053cf;
+  border: 2px solid #bdd3f4;
+}
+.tags #health:checked ~ .tag--health {
+  border: 2px solid #0053cf;
+}
+.tag--work {
+  background: #e8d7ff;
+  color: #9747ff;
+  border: 2px solid #e8d7ff;
+}
+.tags #work:checked ~ .tag--work {
+  border: 2px solid #9747ff;
+}
+.tag--other {
+  background: #ffecc7;
+  color: #ea8c00;
+  border: 2px solid #ffecc7;
+}
+
+.tags #other:checked ~ .tag--other {
+  border: 2px solid #ea8c00;
+}
+.tag--disabled label {
+  background: #f5f5f5;
+  color: #838383;
+  border: 2px solid #f5f5f5;
+}
+input[type="radio"] {
+  appearance: none;
+}

@@ -1,0 +1,29 @@
+.task-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.task-section ul {
+  padding: 0;
+}
+.task-section__placeholder {
+  background-color: #f9fafe;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  gap: 10px;
+  height: 170px;
+}
+.task-section__placeholder h1,
+h4 {
+  margin: 0px;
+}
+.task-section__placeholder h4 {
+  font-size: 20px;
+}
